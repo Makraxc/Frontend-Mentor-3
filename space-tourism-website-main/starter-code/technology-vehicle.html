@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style/shared.css" />
+    <link rel="stylesheet" href="style/crew.css" />
+    <link rel="stylesheet" href="style/technology.css" />
+    <title>Frontend Mentor | Space tourism website</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo"><img src="assets/shared/logo.svg" alt="" /></div>
+      <div class="hamIcon">
+        <img src="assets/shared/icon-hamburger.svg" alt="" />
+      </div>
+      <nav class="navMenu">
+        <div class="closeIcon">
+          <img src="assets/shared/icon-close.svg" alt="" />
+        </div>
+        <ul>
+          <li class="underline">
+            <a href="index.html"><span class="listNum">00</span> Home</a>
+          </li>
+          <li class="underline">
+            <a href="destination-moon.html"
+              ><span class="listNum">01</span> Destination</a
+            >
+          </li>
+          <li class="underline">
+            <a href="crew-specialist.html"
+              ><span class="listNum">02</span> Crew</a
+            >
+          </li>
+          <li class="underline active">
+            <a href="technology-vehicle.html"
+              ><span class="listNum">03</span> Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article class="main">
+        <div class="heading">
+          <h2><span class="listNum">03</span> Space launch 101</h2>
+        </div>
+        <section class="content">
+          <section class="crewPhoto technologyPlaceholder">
+            <img
+              src="assets/technology/image-launch-vehicle-portrait.jpg"
+              alt=""
+              class="technology"
+              width="350px"
+            />
+          </section>
+          <section class="text">
+            <section class="textContent">
+              <div class="nameContainer">
+                <h3>The terminology</h3>
+                <h1 class="namePlaceholder">Launch Vehicle</h1>
+              </div>
+              <div class="description">
+                <p class="descriptionPlaceholder">
+                  A launch vehicle or carrier rocket is a rocket-propelled
+                  vehicle used to carry a payload from Earth's surface to space,
+                  usually to Earth orbit or beyond. Our WEB-X carrier rocket is
+                  the most powerful in operation. Standing 150 metres tall, it's
+                  quite an awe-inspiring sight on the launch pad!
+                </p>
+              </div>
+            </section>
+            <nav class="crewNav">
+              <ul>
+                <li>
+                  <input
+                    type="radio"
+                    name="technology"
+                    class="checkbox link1 vehicle"
+                  />
+                  <div class="dot">1</div>
+                </li>
+                <li>
+                  <input
+                    type="radio"
+                    name="technology"
+                    class="checkbox link2 spaceport"
+                  />
+                  <div class="dot">2</div>
+                </li>
+                <li>
+                  <input
+                    type="radio"
+                    name="technology"
+                    class="checkbox link3 capsule"
+                  />
+                  <div class="dot">3</div>
+                </li>
+              </ul>
+            </nav>
+          </section>
+        </section>
+      </article>
+    </main>
+    <script src="javascript/shared.js"></script>
+    <script type="module" src="javascript/technology.js"></script>
+  </body>
+</html>

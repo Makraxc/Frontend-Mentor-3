@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  position: relative;
+}
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Bellefair", sans-serif;
+  color: rgba(208, 214, 249, 1);
+  background-size: cover;
+}
+header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+/* Header and icon */
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+.hamIcon {
+  cursor: pointer;
+}
+h1,
+h3,
+h2,
+h4 {
+  text-transform: uppercase;
+}
+.heaing h2 {
+  font-size: 28px;
+}
+.closeIcon {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+.navMenu {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.119);
+  backdrop-filter: blur(8px);
+  height: 100%;
+  line-height: 48px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  transition: all 1s;
+  display: none;
+  font-weight: bold;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+a:any-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+}
+.underline {
+  position: relative;
+}
+.underline::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+.underline.active::after {
+  content: "";
+  width: 100%;
+  background-color: white;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+}
+.underline:hover::after,
+.underline.active {
+  width: 100%;
+}
+/* Tablet */
+@media screen and (min-width: 426px) {
+  header {
+    height: 70px;
+    padding: 0 0 0 24px;
+  }
+  /* nav menu */
+  .navMenu {
+    font-size: 16px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    padding: 0 64px;
+  }
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    height: 100%;
+  }
+  .listNum {
+    font-weight: 1000;
+    padding-right: 10px;
+    color: rgba(255, 255, 255, 0.432);
+  }
+
+  li {
+    min-height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  li a {
+    display: block;
+    min-height: 100%;
+    white-space: nowrap;
+  }
+  .closeIcon {
+    display: none;
+  }
+  .hamIcon {
+    display: none;
+  }
+
+  /* ..main content */
+  .title h1 {
+    font-size: 144px;
+  }
+
+  .underline:first-child .listNum {
+    display: none;
+  }
+  .underline:hover::after {
+    content: "";
+    width: 100%;
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+  }
+}
+/* Desktop */
+@media screen and (min-width: 1025px) {
+  header {
+    margin: 20px 0;
+    height: 80px;
+  }
+  .navMenu {
+    position: relative;
+  }
+  :root {
+    --decor-width: 90%;
+  }
+  .navMenu::before {
+    content: "";
+    max-width: 100%;
+    width: var(--decor-width);
+    min-width: 80%;
+    height: 1px;
+    background-color: hsla(0, 0%, 100%, 0.4);
+    position: absolute;
+    bottom: 50%;
+    left: calc(var(--decor-width) * -1 + 5%);
+    z-index: -10;
+  }
+  main {
+    justify-self: flex-end;
+  }
+
+  .displayBtn {
+    margin: 0;
+  }
+}
