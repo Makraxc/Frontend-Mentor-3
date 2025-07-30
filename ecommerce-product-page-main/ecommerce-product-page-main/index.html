@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>E-commerce product page</title>
+  </head>
+  <body>
+    <header>
+      <div class="overlay"></div>
+      
+      
+      <section class="leftSideHeader left">
+        <button class="navIcon">
+          <img src="images/icon-menu.svg" alt="hamburger-ico" />
+        </button>
+        <div class="headerName"><img src="images/logo.svg" alt="" /></div>
+      
+      <nav class="navMenu">
+        <div class="closeIcon">
+          <img src="images/icon-close.svg" alt="close-icon" />
+        </div>
+        <ul>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      </section>
+      <section class="rightSideHeader right">
+        <button class="cart">
+          <img src="images/icon-cart.svg" alt="cart-image" />
+          <span class="cart-notification">0</span>
+        </button>
+        <div class="pfp">
+          <img src="images/image-avatar.png" alt="avatar" />
+        </div>
+      </section>
+      <section class="cartInfo">
+        <h1>Cart</h1>
+        <hr class="hrLine" />
+        <div class="cartItems">
+          <div class="messageSaysNone">
+            <h5>Your cart is empty</h2>
+          </div>
+          <div class="item">
+            <button class="checkout" style="display: none;">Checkout</button>
+            <div class="itemData">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                width="100px"
+                alt=""
+              />
+              <div class="data">
+                <div>
+                  <h2 class="productName">Fall Limited Edition Sneakers</h2>
+                  <p>
+                    <span class="currentPrice">$125.00</span>&nbsp; x
+                    &nbsp;<span class="quantity">3</span>&nbsp;&nbsp<span
+                      class="total"
+                      >$375</span
+                    >
+                  </p>
+                </div>
+                <button class="deleteBtn">
+                  <img
+                    src="images/icon-delete.svg"
+                    class="deleteIcon"
+                    alt="deleteIcon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <article class="imageSlides">
+        <section class="imageSlider">
+          <img
+            src="images/image-product-1.jpg"
+            class="productImage image-product-1"
+            alt="img1"
+          />
+          <img
+            src="images/image-product-2.jpg"
+            class="productImage"
+            alt="img2"
+          />
+          <img
+            src="images/image-product-3.jpg"
+            class="productImage"
+            alt="img3"
+          />
+          <img
+            src="images/image-product-4.jpg"
+            class="productImage"
+            alt="img4"
+          />
+          <button class="prevousIcon">
+            <img src="images/icon-previous.svg" alt="prevousIcon" />
+          </button>
+          <button class="nextIcon">
+            <img src="images/icon-next.svg" alt="nextIcon" />
+          </button>
+          <nav class="imageProductNav">
+            <ul>
+              <li><a href="#"><img src="images/image-product-1-thumbnail.jpg" alt="image1"></a></li>
+              <li><a href="#"><img src="images/image-product-2-thumbnail.jpg" alt="image2"></a></li>
+              <li><a href="#"><img src="images/image-product-3-thumbnail.jpg" alt="image3"></a></li>
+              <li><a href="#"><img src="images/image-product-4-thumbnail.jpg" alt="image4"></a></li>
+            </ul>
+          </nav>
+        </section>
+      </article>
+      <article class="mainContent">
+        <section class="textContent">
+          <h2 class="smallText">sneaker company</h2>
+          <h3 class="largeText">Fall Limited Edition Sneakers</h3>
+          <p class="description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything
+            the weather can offer.
+          </p>
+        </section>
+        <section class="pricing">
+          <h4 class="largeText">
+            <span class="currentPrice"> $125.00</span>
+            <span class="discountSpan">50%</span>
+          </h4>
+          <h4 class="smallText originalPrice">$250.00</h4>
+        </section>
+        <section class="quantity">
+          <form class="addToCart">
+            <label class="quantityLabel">
+              <input
+                type="number"
+                class="quantityInput"
+                name="quantity"
+                max="100"
+                min="0"
+                value="0"
+              />
+              <img src="images/icon-minus.svg" class="minus" alt="icon-minus" />
+              <img src="images/icon-plus.svg" class="plus" alt="plusIcon" />
+            </label>
+
+            <button type="submit" class="submitBtn">
+              <img src="images/icon-cart.svg" alt="cart" class="Cart" />Add to
+              cart
+            </button>
+          </form>
+        </section>
+      </article>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">马可然</a>.
+    </div>
+    <script src="assets/script.js" type="module"></script>
+  </body>
+</html>
