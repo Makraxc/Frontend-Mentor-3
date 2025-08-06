@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Browser extensions manager UI</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        margin-top: 2rem;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <body>
+  </head>
+  <div class="dimWrapper"></div>
+    <div id="confirmationPanel">
+      <p>Are you sure to delete this extension?</p>
+      <div class="confirm">
+        <button class="yesBtn" onclick="remove()">Yes</button>
+        <button class="noBtn" onclick="dismiss()">No</button>
+      </div>
+    </div>
+    <header>
+      <div class="appName">
+        <img src="assets/images/logo.svg" alt="logo" />
+      </div>
+      <div class="darkToggle" onclick="darkMode()">
+        <img src="assets/images/icon-moon.svg" alt="dark" />
+      </div>
+    </header>
+    <main>
+      <article class="pageTitle">
+        <h1>Extensions List</h1>
+        <div class="filterOpts">
+          <label for="all" class="toggle all">
+            All<input
+              type="radio"
+              class="radio"
+              id="all"
+              name="toggle"
+              onclick="allExt()"
+              checked
+            />
+          </label>
+          <label for="active" class="toggle active">
+            Active<input
+              onclick="active()"
+              type="radio"
+              class="radio"
+              id="active"
+              name="toggle"
+            />
+          </label>
+          <label for="inactive" class="toggle inactive">
+            Inactive
+            <input
+              type="radio"
+              onclick="inactive()"
+              class="radio"
+              id="inactive"
+              name="toggle"
+            />
+          </label>
+        </div>
+      </article>
+      <article class="extensions">
+        <section class="extItem activeExt">
+          <div class="details">
+            <img src="assets/images/logo-devlens.svg" alt="DevLens" />
+            <div class="text">
+              <h2 class="extName">DevLens</h2>
+              <p>
+                Quickly inspect page layouts and visualize element boundaries.
+              </p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+
+            <div class="toggle-container active">
+              <label for="ext1">
+                <input
+                  type="checkbox"
+                  id="ext1"
+                  name="active"
+                  class="toggle-input"
+                  checked
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem activeExt">
+          <div class="details">
+            <img src="assets/images/logo-style-spy.svg" alt="StyleSpy" />
+            <div class="text">
+              <h2 class="extName">StyleSpy</h2>
+              <p>Instantly analyze and copy CSS from any webpage element.</p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container active">
+              <label for="ext2">
+                <input
+                  type="checkbox"
+                  id="ext2"
+                  name="active"
+                  class="toggle-input"
+                  checked
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem">
+          <div class="details">
+            <img src="assets/images/logo-speed-boost.svg" alt="SpeedBoost" />
+            <div class="text">
+              <h2 class="extName">SpeedBoost</h2>
+              <p>
+                Optimizes browser resource usage to accelerate page loading.
+              </p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container">
+              <label for="ext3">
+                <input
+                  type="checkbox"
+                  id="ext3"
+                  name="active"
+                  class="toggle-input"
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem activeExt">
+          <div class="details">
+            <img src="assets/images/logo-json-wizard.svg" alt="JSONWizard" />
+            <div class="text">
+              <h2 class="extName">JSONWizard</h2>
+              <p>
+                Formats, validates, and prettifies JSON responses in-browser.
+              </p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container active">
+              <label for="ext4">
+                <input
+                  type="checkbox"
+                  id="ext4"
+                  name="active"
+                  class="toggle-input"
+                  checked
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem activeExt">
+          <div class="details">
+            <img
+              src="assets/images/logo-tab-master-pro.svg"
+              alt="TabMaster Pro"
+            />
+            <div class="text">
+              <h2 class="extName">TabMaster Pro</h2>
+              <p>Organizes browser tabs into groups and sessions.</p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container active">
+              <label for="ext5">
+                <input
+                  type="checkbox"
+                  id="ext5"
+                  name="active"
+                  class="toggle-input"
+                  checked
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem">
+          <div class="details">
+            <img
+              src="assets/images/logo-viewport-buddy.svg"
+              alt="ViewportBuddy"
+            />
+            <div class="text">
+              <h2 class="extName">ViewportBuddy</h2>
+              <p>
+                Simulates various screen resolutions directly within the
+                browser.
+              </p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container">
+              <label for="ext6">
+                <input
+                  type="checkbox"
+                  id="ext6"
+                  name="active"
+                  class="toggle-input"
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem activeExt">
+          <div class="details">
+            <img src="assets/images/logo-markup-notes.svg" alt="Markup Notes" />
+            <div class="text">
+              <h2 class="extName">Markup Notes</h2>
+              <p>
+                Enables annotation and notes directly onto webpages for
+                collaborative debugging.
+              </p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container active">
+              <label for="ext7">
+                <input
+                  type="checkbox"
+                  id="ext7"
+                  name="active"
+                  class="toggle-input"
+                  checked
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem">
+          <div class="details">
+            <img src="assets/images/logo-grid-guides.svg" alt="GridGuides" />
+            <div class="text">
+              <h2 class="extName">GridGuides</h2>
+              <p>
+                Overlay customizable grids and alignment guides on any webpage.
+              </p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container">
+              <label for="ext8">
+                <input
+                  type="checkbox"
+                  id="ext8"
+                  name="active"
+                  class="toggle-input"
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem activeExt">
+          <div class="details">
+            <img
+              src="assets/images/logo-palette-picker.svg"
+              alt="Palette Picker"
+            />
+            <div class="text">
+              <h2 class="extName">Palette Picker</h2>
+              <p>Instantly extracts color palettes from any webpage.</p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container active">
+              <label for="ext9">
+                <input
+                  type="checkbox"
+                  id="ext9"
+                  name="active"
+                  class="toggle-input"
+                  checked
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem activeExt">
+          <div class="details">
+            <img src="assets/images/logo-link-checker.svg" alt="LinkChecker" />
+            <div class="text">
+              <h2 class="extName">LinkChecker</h2>
+              <p>Scans and highlights broken links on any page.</p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container active">
+              <label for="ext10">
+                <input
+                  type="checkbox"
+                  id="ext10"
+                  name="active"
+                  class="toggle-input"
+                  checked
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem">
+          <div class="details">
+            <img src="assets/images/logo-dom-snapshot.svg" alt="DOM Snapshot" />
+            <div class="text">
+              <h2 class="extName">DOM Snapshot</h2>
+              <p>Capture and export DOM structures quickly.</p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container">
+              <label for="ext11">
+                <input
+                  type="checkbox"
+                  id="ext11"
+                  name="active"
+                  class="toggle-input"
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="extItem activeExt">
+          <div class="details">
+            <img src="assets/images/logo-console-plus.svg" alt="ConsolePlus" />
+            <div class="text">
+              <h2 class="extName">ConsolePlus</h2>
+              <p>
+                Enhanced developer console with advanced filtering and logging.
+              </p>
+            </div>
+          </div>
+          <div class="toolOpts">
+            <button class="remove" onclick="confirmRemoval(event)">
+              Remove
+            </button>
+            <div class="toggle-container active">
+              <label for="ext12">
+                <input
+                  type="checkbox"
+                  id="ext12"
+                  name="active"
+                  class="toggle-input"
+                  checked
+                />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Makraxce</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
