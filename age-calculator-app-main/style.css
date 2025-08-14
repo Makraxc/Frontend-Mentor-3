@@ -1,0 +1,118 @@
+@font-face {
+  font-family: var("Poppins");
+  src: url("assets/fonts/Poppins-Bold.ttf");
+}
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* COLORS - PRIMARY */
+  --PURPLE-500: hsl(259, 100%, 65%);
+  --RED-400: hsl(0, 100%, 67%);
+
+  /* COLORS - NEUTRAL */
+  --WHITE: hsl(0, 100%, 100%);
+  --GREY-100: hsl(0, 0%, 94%);
+  --GREY-200: hsl(0, 0%, 86%);
+  --GREY-500: hsl(0, 1%, 44%);
+  --BLACK: hsl(0, 0%, 0%);
+
+  /* TYPOGRAPHY */
+  --FONT-SIZE-INPUTS: 32px;
+  --FONT-FAMILY: "Poppins", sans-serif;
+  --FONT-WEIGHT-400I: 400; /* italic styling applied separately */
+  --FONT-WEIGHT-700: 700;
+  --FONT-WEIGHT-800I: 800; /* italic styling applied separately */
+}
+body,
+.info,
+input {
+  display: flex;
+}
+body {
+  font-family: var(--FONT-FAMILY);
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--GREY-200);
+}
+main {
+  max-width: 1000px;
+  background-color: var(--WHITE);
+  padding: 1rem;
+  border-radius: 10px;
+  border-bottom-right-radius: 30%;
+  position: relative;
+}
+.info {
+  flex-flow: row nowrap;
+  gap: 1rem;
+  position: relative;
+}
+.info label {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.5;
+  font-size: 0.8em;
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+input {
+  font: inherit;
+  flex-flow: column nowrap;
+  width: 70px;
+  height: 40px;
+  border: 1px solid var(--GREY-200);
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0 0.5rem;
+}
+input:focus {
+  outline: 3px solid var(--PURPLE-500);
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  appearance: none;
+}
+.warning {
+  position: absolute;
+  font-size: 0.6em;
+  color: var(--RED-400);
+  display: none;
+}
+.hrLine {
+  width: 100%;
+  height: 1px;
+  background-color: var(--GREY-200);
+  margin: 3.5rem 0;
+}
+.submitBtn img {
+  width: 100%;
+}
+.submitBtn {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  background-color: var(--PURPLE-500);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0.8rem;
+}
+.age {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 0;
+}
+.Placeholder {
+  color: var(--PURPLE-500);
+}

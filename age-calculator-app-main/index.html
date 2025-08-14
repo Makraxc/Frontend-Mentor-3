@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <form action="">
+        <section class="info">
+          <div class="day">
+            <label for="day">Day</label>
+            <input type="number" placeholder="DD" id="day" />
+            <p class="warning">Must be a valid day</p>
+          </div>
+          <div class="month">
+            <label for="month">Month</label>
+            <input type="number" placeholder="MM" id="month" />
+            <p class="warning">Must be a valid month</p>
+          </div>
+          <div class="year">
+            <label for="year">Year</label>
+            <input type="number" placeholder="YY" min="1500" />
+            <p class="warning">Must be in the past</p>
+          </div>
+        </section>
+        <section class="submission">
+          <div class="hrLine"></div>
+          <button type="submit" class="submitBtn">
+            <img src="assets/images/icon-arrow.svg" alt="" />
+          </button>
+        </section>
+      </form>
+      <article class="age">
+        <div class="finalYear">
+          <p><span class="yearPlaceholder Placeholder">- - </span> years</p>
+        </div>
+        <div class="finalMonth">
+          <p><span class="monthPlaceholder Placeholder">- - </span> months</p>
+        </div>
+        <div class="finalDay">
+          <p><span class="dayPlaceholder Placeholder">- - </span> days</p>
+        </div>
+      </article>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
