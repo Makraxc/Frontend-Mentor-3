@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>calc</h1>
+      <div class="theme">Other themes are just ugly UWU</div>
+    </header>
+    <main>
+      <section class="displayNum">
+        <input class="display" id="display" readonly type="text" />
+      </section>
+      <section class="inputField">
+        <div class="keys">
+          <button onclick="appendNum('7')">7</button>
+          <button onclick="appendNum('8')">8</button>
+          <button onclick="appendNum('9')">9</button>
+          <button class="del" onclick="del()">Del</button>
+          <button onclick="appendNum('4')">4</button>
+          <button onclick="appendNum('5')">5</button>
+          <button onclick="appendNum('6')">6</button>
+          <button onclick="appendNum('+')">+</button>
+          <button onclick="appendNum('1')">1</button>
+          <button onclick="appendNum('2')">2</button>
+          <button onclick="appendNum('3')">3</button>
+          <button onclick="appendNum('-')">-</button>
+          <button class="dot" onclick="appendNum('.')">.</button>
+          <button onclick="appendNum('0')">0</button>
+          <button onclick="appendNum('/')">/</button>
+          <button onclick="appendNum('*')">x</button>
+        </div>
+        <div class="processing">
+          <button class="reset" onclick="reset()">RESET</button>
+          <button class="calc" onclick="calculate()">=</button>
+        </div>
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Makraxce</a>.
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
