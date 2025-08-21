@@ -1,0 +1,181 @@
+@import url("https://fonts.google.com/specimen/DM+Sans");
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+/* Utility */
+.small {
+  font-size: clamp(1rem, 2vw + 0.5rem, 2.5rem);
+}
+.wrap {
+  white-space: wrap;
+}
+.large {
+  font-size: 2.3rem !important;
+}
+.bold,
+p {
+  font-weight: bold;
+}
+div {
+  width: auto;
+  max-width: 500px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: white;
+}
+.notBold {
+  font-weight: normal;
+}
+.hightlightYellow {
+  color: hsl(39, 100%, 71%);
+}
+.hightlightPurple {
+  color: hsl(256, 67%, 59%);
+}
+p {
+  display: block;
+}
+img {
+  width: 40%;
+  display: block;
+}
+.purpleBg {
+  background-color: hsl(256, 67%, 59%);
+}
+.lightYellowBg {
+  background-color: hsl(31, 66%, 93%);
+}
+.yellowBg {
+  background-color: hsl(39, 100%, 71%);
+}
+.lightPurpleBg {
+  background-color: hsl(254, 88%, 90%);
+}
+
+.white {
+  color: white;
+}
+/* Layout */
+main {
+  display: grid;
+  gap: 1.5rem;
+}
+div:first-child {
+  font-size: clamp(1rem, 2vw + 1.2rem, 2.5rem);
+}
+div:nth-child(2) img {
+  width: 100%;
+}
+div:nth-child(2) {
+  text-align: left;
+  font-size: clamp(1rem, 2vw + 0.5rem, 2.5rem);
+}
+div:nth-child(8) {
+  font-size: clamp(1rem, 2vw + 0.1rem, 2.5rem);
+}
+div:nth-child(8) img {
+  width: 70%;
+}
+div:nth-child(3) img {
+  width: 100%;
+}
+div:nth-child(3) p:first-child {
+  font-size: clamp(1rem, 2vw + 0.7rem, 2.5rem);
+}
+div:nth-child(3) p:last-child {
+  font-size: clamp(1rem, 2vw, 2.5rem);
+}
+.large.bolder {
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+}
+div:nth-child(5) {
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-size: clamp(1rem, 2vw + 0.5rem, 2.5rem);
+  padding: 1.1em;
+}
+
+div:nth-child(6) p {
+  letter-spacing: 1px;
+  font-size: clamp(1rem, 2vw + 0.7rem, 2.5rem);
+  text-align: start;
+  margin: 10px;
+  white-space: wrap;
+}
+div:nth-child(6) img {
+  width: 100%;
+}
+div:nth-child(6) {
+  align-items: flex-start;
+  padding: 1.2em;
+}
+
+div:nth-child(7) p {
+  font-size: clamp(1rem, 2vw + 0.8rem, 2.5rem);
+  text-align: start;
+}
+div:nth-child(7) {
+  align-items: flex-start;
+}
+div:nth-child(7) img {
+  width: 80%;
+}
+div:nth-child(4) {
+  align-items: flex-start;
+  font-size: clamp(1rem, 2vw + 1rem, 2.5rem);
+  text-align: start;
+  gap: 4rem;
+}
+div:nth-child(4) img {
+  width: 100%;
+}
+div:nth-child(4) p {
+  margin: 0;
+  padding: 0.5em 0;
+}
+@media screen and (min-width: 768px) {
+  main {
+    padding: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat((2, 1fr));
+  }
+  div {
+    max-width: 1000px;
+  }
+  .purpleBg {
+    grid-column: span 2;
+  }
+  .yellowBg {
+    grid-row: span 1;
+  }
+  .yellowBg.long {
+    grid-row: span 2;
+  }
+  .white {
+    grid-row: span 1;
+  }
+  .lightPurpleBg {
+    grid-row: span 2;
+  }
+}
+
+/* Moral of the story:
+- dont use div:nth-child to much, only occationally, otherwise it's gonna fuck u up
+- always use responsive font size in responsive page, obviously
+- dont be too lazy to just use class names, it's more useful than nth-child ;)
+- bento grid is simple, core property is grid-template-columns for parent and span N for its children
+- One last thing, dont ever fucking assign more grid column than what ur element can occupy LOL. 12 columns for just 4 element????? fuck.
+*/
