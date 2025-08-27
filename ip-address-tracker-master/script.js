@@ -9,7 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
-  marker = L.marker([lat, lng]).addTo(map);
+
+  
+  const customIcon = L.icon({
+    iconUrl: "images/icon-location.svg", // path to your icon image
+    iconSize: [32, 40], // size of the icon [width, height]
+    iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+    popupAnchor: [0, -32], // point from which the popup should open relative to the iconAnchor
+  });
+marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
 });
 // Helper function to update text content
 function textContent(target, content) {
@@ -70,3 +78,4 @@ document.querySelector(".searchForm").addEventListener("submit", (event) => {
 // response.status show http status code(error) like 200 404 or 401. response.statusText is its short discription
 
 // ok is a property of response object returned by fetch. it means the request was successful or failed otherwise
+
